@@ -7,6 +7,10 @@ interface AdminRouteProps {
 }
 
 const AdminRoute: React.FC<AdminRouteProps> = ({ children }) => {
+  // BYPASS AUTHENTICATION - Always allow access
+  return <>{children}</>;
+
+  /* Original admin check code (commented out)
   const { isAuthenticated, isAdmin, loading } = useAuth();
 
   if (loading) {
@@ -26,6 +30,7 @@ const AdminRoute: React.FC<AdminRouteProps> = ({ children }) => {
   }
 
   return <>{children}</>;
+  */
 };
 
 export default AdminRoute;

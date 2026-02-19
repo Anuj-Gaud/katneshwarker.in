@@ -7,6 +7,10 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
+  // BYPASS AUTHENTICATION - Always allow access
+  return <>{children}</>;
+
+  /* Original authentication code (commented out)
   const { isAuthenticated, loading } = useAuth();
 
   if (loading) {
@@ -22,6 +26,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   }
 
   return <>{children}</>;
+  */
 };
 
 export default ProtectedRoute;
